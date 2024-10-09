@@ -33,14 +33,32 @@ function render(variables = {}) {
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
             ${cover}
           <img src="${variables.avatarURL}" class="photo" />
-          <h1>Lucy Boilett</h1>
-          <h2>Web Developer</h2>
-          <h3>Miami, USA</h3>
-          <ul class="position-right">
-            <li><a href="https://twitter.com/4geeksacademy"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="https://github.com/4geeksacademy"><i class="fab fa-github"></i></a></li>
-            <li><a href="https://linkedin.com/school/4geeksacademy"><i class="fab fa-linkedin"></i></a></li>
-            <li><a href="https://instagram.com/4geeksacademy"><i class="fab fa-instagram"></i></a></li>
+          <h1>${variables.name ? variables.name : "Edvin Johannes"} ${
+    variables.lastName ? variables.lastName : "Piirsalu"
+  }</h1>
+          <h2>${variables.role ? variables.role : "Web Developer"}</h2>
+          <h3>${variables.city ? variables.city : "Barcelona"} ${
+    variables.country ? variables.country : "Spain"
+  }</h3>
+          <ul class="${
+            variables.socialMediaPosition
+              ? variables.socialMediaPosition
+              : "Left"
+          }">
+            <li><a href="https://twitter.com/${
+              variables.twitter ? variables.twitter : "4geeksacademy"
+            }"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="https://github.com/${
+              variables.github ? variables.github : "EdvinPiirsalu"
+            }"><i class="fab fa-github"></i></a></li>
+            <li><a href="https://linkedin.com/${
+              variables.linkedin
+                ? variables.linkedin
+                : "in/edvin-johannes-piirsalu-0456a7138/"
+            }"><i class="fab fa-linkedin"></i></a></li>
+            <li><a href="https://instagram.com/${
+              variables.instagram ? variables.instagram : "edvinjohannes"
+            }"><i class="fab fa-instagram"></i></a></li>
           </ul>
         </div>
     `;
